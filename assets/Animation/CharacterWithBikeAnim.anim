@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "CharacterWithBikeAnim",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.6833333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "6bea9032-1aaf-4711-b8e4-d30e557ee6ac"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "1ab8ab06-0911-4259-aca2-2120ba440dfa"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "20c4789e-50a5-4014-9440-80ba631e9e95"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "ed746ca5-4edc-4d68-ace1-c3daa0d14b6a"
+            }
+          },
+          {
+            "frame": 0.6666666666666666,
+            "value": {
+              "__uuid__": "6bea9032-1aaf-4711-b8e4-d30e557ee6ac"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

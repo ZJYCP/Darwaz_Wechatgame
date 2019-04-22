@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "radio",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1.0166666666666666,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "3e5c4dd9-9884-4186-b708-705cedb1a263"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "3c96aa1d-0b6a-4db1-b29e-e3769ab5deb7"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "946323cb-1354-4cc0-aa19-cf817b073440"
+            }
+          },
+          {
+            "frame": 0.75,
+            "value": {
+              "__uuid__": "b1b30952-77f4-4d78-bbfe-4857e3ac5d96"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "3e5c4dd9-9884-4186-b708-705cedb1a263"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
