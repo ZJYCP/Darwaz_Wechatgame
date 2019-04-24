@@ -39,10 +39,10 @@ cc.Class({
     start() {
         // if(!window.GM.distance){
         // var GM={}
-        let score = parseInt(window.GM.distance)
-        this.score.string = score
+
+        this.score.string = parseInt(window.GM.distance);
         // }
-        this.initAction()
+        this.initAction();
         // console.log('aa'+window.GM.distance)
 
         if (CC_WECHATGAME) {
@@ -85,6 +85,10 @@ cc.Class({
         } else {
             cc.log("请求拉取列表");
         }
+    },
+
+    advertiseLoad(){
+        //do something
     }
 
     // update (dt) {},
