@@ -39,8 +39,10 @@ cc.Class({
     start() {
         // if(!window.GM.distance){
         // var GM={}
+        if(window.GM){
+            this.score.string = parseInt(window.GM.distance);
 
-        this.score.string = parseInt(window.GM.distance);
+        }
         // }
         this.initAction();
         // console.log('aa'+window.GM.distance)

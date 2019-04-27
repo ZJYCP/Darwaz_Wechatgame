@@ -50,8 +50,8 @@ cc.Class({
     start() {
 
         // this.Fog = cc.find("Fog");
-        this.schedule(this.BombFallDown.bind(this), 3, cc.macro.REPEAT_FOREVER);
-        this.schedule(this.BicycleFallDown.bind(this), 7, cc.macro.REPEAT_FOREVER);
+        this.schedule(this.BombFallDown.bind(this), 4, cc.macro.REPEAT_FOREVER);
+        this.schedule(this.BicycleFallDown.bind(this), 8, cc.macro.REPEAT_FOREVER);
         // this.scheduleOnce(this.fogShow.bind(this),2);
 
 
@@ -74,7 +74,7 @@ cc.Class({
                 newbomb.setPosition(randomNumber, cc.view.getVisibleSize().height + 50);
                 let bi = newbomb.getComponent("BombItem");
                 if (bi != null) {
-                    bi.DoFallingAction(3);
+                    bi.DoFallingAction(4);
                 }
             }
         }
@@ -117,7 +117,7 @@ cc.Class({
                 }
                 let bi = newbomb.getComponent("BicycleItem");
                 if (bi != null) {
-                    bi.DoFallingAction(3);
+                    bi.DoFallingAction(4);
                 }
                 else {
                     console.log("f1");

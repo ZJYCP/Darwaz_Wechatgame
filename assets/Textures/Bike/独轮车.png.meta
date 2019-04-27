@@ -1,0 +1,31 @@
+{
+  "ver": "2.2.0",
+  "uuid": "4af4f664-26a1-43f5-bc2c-e198948ace0c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "subMetas": {
+    "独轮车": {
+      "ver": "1.0.3",
+      "uuid": "32acf825-e771-4cde-8bee-f9b090bc2e4c",
+      "rawTextureUuid": "4af4f664-26a1-43f5-bc2c-e198948ace0c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 4,
+      "offsetY": 1,
+      "trimX": 14,
+      "trimY": 29,
+      "width": 220,
+      "height": 390,
+      "rawWidth": 240,
+      "rawHeight": 450,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

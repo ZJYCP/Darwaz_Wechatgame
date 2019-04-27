@@ -50,8 +50,15 @@ cc.Class({
                 if (this.windText != null) {
                     this.windText.string = "Wind Power: " + Math.floor(this.windPower);
                 }
+                setTimeout(() => {
+                    this.windPower=0;
+                    if (this.windText != null) {
+                        this.windText.string = "Wind Power: 0";
+                    }
+                }, 3);
             }
-        }.bind(this),4,cc.macro.REPEAT_FOREVER);
+
+        }.bind(this),10,cc.macro.REPEAT_FOREVER);
     },
 
     // update (dt) {},
