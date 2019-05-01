@@ -55,7 +55,7 @@ cc.Class({
                     if (this.windText != null) {
                         this.windText.string = "Wind Power: 0";
                     }
-                }, 3);
+                }, 3000);
             }
 
         }.bind(this),10,cc.macro.REPEAT_FOREVER);
