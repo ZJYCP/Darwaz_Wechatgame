@@ -72,7 +72,7 @@ cc.Class({
         window.GM.characterController.node.rotation=0;
         window.GM.distance=0;
         window.GM.windManager.windPower=0;
-        window.GM.windManager.windText.string = "Wind Power: " + 0;
+        window.GM.windManager.windText.string = "" + 0;
     },
     start() {
         /*开启碰撞系统*/
@@ -88,7 +88,7 @@ cc.Class({
             if (this.ropeMove != null) {
                 this.distance += this.ropeMove.moveSpeed * dt * 0.05;
                 if (this.DistanceText != null) {
-                    this.DistanceText.string = "Distance:" + Math.floor(this.distance);
+                    this.DistanceText.string = "" + Math.floor(this.distance);
                 }
             }
         }

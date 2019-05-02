@@ -48,12 +48,12 @@ cc.Class({
             if (gm.gameStart && (!gm.gamePause) && (!gm.gameOver)) {
                 this.windPower = -5 + 10 * Math.random();
                 if (this.windText != null) {
-                    this.windText.string = "Wind Power: " + Math.floor(this.windPower);
+                    this.windText.string = "" + Math.floor(this.windPower);
                 }
                 setTimeout(() => {
                     this.windPower=0;
                     if (this.windText != null) {
-                        this.windText.string = "Wind Power: 0";
+                        this.windText.string = "0";
                     }
                 }, 3000);
             }

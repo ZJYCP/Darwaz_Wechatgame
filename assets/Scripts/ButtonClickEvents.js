@@ -42,8 +42,9 @@ cc.Class({
             return;
         }
         window.GM.gamePause = !window.GM.gamePause;
-        var pt = cc.find("PauseTip");
+        var pt = cc.find("Canvas/PauseTip");
         if (pt) {
+
             pt.active = !pt.active;
             if(pt.active)
             {
