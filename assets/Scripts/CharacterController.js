@@ -151,17 +151,27 @@ cc.Class({
 
             }
             if (this.leftKeyDown == true) {
+                // console.log(this.node.rotation)
                 this.leftKeyDown = false;
                 this.state -= this.keyboradPower * dt;
 
             }
-            if (gm) {
-                this.state += gm.windManager.windPower * 0.4 * dt;
-
+            if (this.node.rotation<0){
+                // this.state-=Math.pow(this.node.rotation/10,2)/1000;
+                this.state-=Math.log2(Math.abs(this.node.rotation/10)+1)/200
             }
 
+            if (this.node.rotation>0){
+                this.state+=Math.log2(Math.abs(this.node.rotation/10)+1)/200
+                // this.state+=Math.pow(this.node.rotation/10,2)/1000;
+            }
+            // if (gm) {
+                this.state +=gm.windManager.windPower * 0.2 * dt;
 
-            if (this.preState == this.state) {
+            // }
+
+
+            if (this.preState === this.state) {
                 return;
             } else {
                 let angle=this.state * 18;
@@ -199,7 +209,7 @@ cc.Class({
         console.log("OnBicycleEvent");
 
         window.GM.ropeMove.moveSpeed = 70;//加速的速度
-        if (!this.bikeState) {
+        if (!this.bikeState&&!window.GM.gameOver) {
             this.changeCharacter();
         }
         this.bikeState = true;

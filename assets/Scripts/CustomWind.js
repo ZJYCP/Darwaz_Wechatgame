@@ -46,7 +46,7 @@ cc.Class({
         this.schedule(function () {
             let gm = window.GM;
             if (gm.gameStart && (!gm.gamePause) && (!gm.gameOver)) {
-                this.windPower = -5 + 10 * Math.random();
+                this.windPower = -3 + 6 * Math.random();
                 if (this.windText != null) {
                     this.windText.string = "" + Math.floor(this.windPower);
                 }
