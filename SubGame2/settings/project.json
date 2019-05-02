@@ -1,44 +1,41 @@
 {
   "collision-matrix": [
     [
-      true,
-      null,
-      true,
       true
-    ],
-    [
-      false,
-      false,
-      true,
-      true
-    ],
-    [
-      true,
-      true,
-      false
-    ],
-    [
-      true,
-      true,
-      false,
-      false
     ]
   ],
-  "design-resolution-height": 640,
-  "design-resolution-width": 960,
+  "design-resolution-height": 1280,
+  "design-resolution-width": 720,
   "excluded-modules": [
+    "WebGL Renderer",
+    "Renderer Texture",
+    "Dynamic Atlas",
+    "LabelOutline",
+    "ParticleSystem",
     "TiledMap",
     "Spine Skeleton",
     "DragonBones",
     "RichText",
     "MotionStreak",
-    "ScrollBar",
-    "ScrollView",
+    "Widget",
+    "Button",
+    "ProgressBar",
     "Toggle",
     "PageView",
     "PageViewIndicator",
     "Slider",
-    "EditBox"
+    "EditBox",
+    "VideoPlayer",
+    "WebView",
+    "Audio",
+    "AudioSource",
+    "Animation",
+    "Collider",
+    "Action",
+    "Physics",
+    "StudioComponent",
+    "Intersection",
+    "Native NetWork"
   ],
   "facebook": {
     "appID": "",
@@ -53,18 +50,15 @@
   "fit-height": true,
   "fit-width": false,
   "group-list": [
-    "default",
-    "Stick",
-    "Item",
-    "Obstacle"
+    "default"
   ],
-  "last-module-event-record-time": 1556799855892,
+  "last-module-event-record-time": 1556801222051,
   "simulator-orientation": false,
   "simulator-resolution": {
     "height": 640,
     "width": 960
   },
-  "start-scene": "current",
+  "start-scene": "4310f31a-7e48-409a-999c-178cc5fca562",
   "use-customize-simulator": false,
   "use-project-simulator-setting": false
 }

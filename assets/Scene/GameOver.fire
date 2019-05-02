@@ -44,8 +44,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.3841672732492437,
-      "y": 0.3841672732492437,
+      "x": 0.3241715602493789,
+      "y": 0.3241715602493789,
       "z": 1
     },
     "_quat": {
@@ -328,11 +328,11 @@
     "_enabled": true,
     "alignMode": 1,
     "_target": null,
-    "_alignFlags": 5,
+    "_alignFlags": 0,
     "_left": 0,
     "_right": 0,
-    "_top": -117.5,
-    "_bottom": -117.5,
+    "_top": 0,
+    "_bottom": 0,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,
