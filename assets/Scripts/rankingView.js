@@ -29,7 +29,8 @@ cc.Class({
         // },
         showRank: cc.Node,
         rankingView: cc.Node,
-        score: cc.Label
+        score: cc.Label,
+        introduction:cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -90,7 +91,12 @@ cc.Class({
     },
 
     advertiseLoad(){
+        this.introduction.active=true;
         //do something
+    },
+
+    closeIntro(){
+        this.introduction.active=false;
     }
 
     // update (dt) {},

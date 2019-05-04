@@ -27,12 +27,12 @@ cc.Class({
     },
 
     onStartButonDown(event, customEventData) {
-        cc.loader.downloader.loadSubpackage('over', function (err) {
-            if (err) {
-                return console.error(err);
-            }
-            console.log('load subpackage successfully.');
-        });
+        // cc.loader.downloader.loadSubpackage('over', function (err) {
+        //     if (err) {
+        //         return console.error(err);
+        //     }
+        //     console.log('load subpackage successfully.');
+        // });
 
         window.GM.gameStart = true;
         var st = cc.find("Canvas/gametip");
