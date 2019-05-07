@@ -17,7 +17,7 @@
     "_parent": null,
     "_children": [],
     "_active": true,
-    "_level": 1,
+    "_level": 3,
     "_components": [
       {
         "__id__": 2
@@ -58,8 +58,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.11,
-      "y": 0.11,
+      "x": 0.07,
+      "y": 0.07,
       "z": 1
     },
     "_rotationX": 0,

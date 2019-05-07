@@ -96,7 +96,7 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 0,
+    "_level": 2,
     "_components": [
       {
         "__id__": 3
@@ -108,9 +108,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 137,
-      "g": 197,
-      "b": 229,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -161,7 +161,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "a23235d1-15db-4b95-8439-a2e005bfff91"
+      "__uuid__": "8446b804-bc21-48fc-8b8b-17815c3ae85b"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -184,9 +184,9 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "d451129f-2dff-4bd9-9989-f18d702ea071"
     },
-    "fileId": "e3n/T+oQ5K+ojVr9bXUq3x",
+    "fileId": "f5TANFRMVBZbTbWvbw6cpG",
     "sync": false
   },
   {
@@ -351,7 +351,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "d451129f-2dff-4bd9-9989-f18d702ea071"
     },
     "fileId": "2cWhWGZWhEoqlQOnRIB9cG",
     "sync": false
@@ -388,7 +388,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "d451129f-2dff-4bd9-9989-f18d702ea071"
     },
     "fileId": "fdkoHURN5CFoVDPhJwnLSy",
     "sync": false
@@ -488,7 +488,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "d451129f-2dff-4bd9-9989-f18d702ea071"
     },
     "fileId": "91qsJjE2JIMJ3pkavmZepm",
     "sync": false
@@ -588,7 +588,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "d451129f-2dff-4bd9-9989-f18d702ea071"
     },
     "fileId": "04Z1MvO/RC6KJ5j2+AB/hL",
     "sync": false
@@ -688,7 +688,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "d451129f-2dff-4bd9-9989-f18d702ea071"
     },
     "fileId": "804FH2uAVB/rG0X3/Zapvh",
     "sync": false
@@ -702,7 +702,7 @@
     },
     "_enabled": true,
     "backSprite": {
-      "__id__": 2
+      "__id__": 3
     },
     "rankLabel": {
       "__id__": 9
@@ -727,7 +727,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "d451129f-2dff-4bd9-9989-f18d702ea071"
     },
     "fileId": "67H5X2iF9LcaQkqJvm4Q/f",
     "sync": false

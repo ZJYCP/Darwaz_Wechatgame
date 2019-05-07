@@ -50,8 +50,8 @@ cc.Class({
     start() {
 
         // this.Fog = cc.find("Fog");
-        this.schedule(this.BombFallDown.bind(this), 4, cc.macro.REPEAT_FOREVER);
-        this.schedule(this.BicycleFallDown.bind(this), 8, cc.macro.REPEAT_FOREVER);
+        this.schedule(this.BombFallDown.bind(this), 5, cc.macro.REPEAT_FOREVER);
+        this.schedule(this.BicycleFallDown.bind(this), 15, cc.macro.REPEAT_FOREVER);
         // this.scheduleOnce(this.fogShow.bind(this),2);
 
 

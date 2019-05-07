@@ -38,9 +38,9 @@ cc.Class({
     },
     DoFallingAction(fallingTime)
     {
-        let c=(Math.random()*cc.view.getVisibleSize().width/3)+cc.view.getVisibleSize().width/8;
+        let c=(Math.random()*cc.view.getVisibleSize().width/4)+cc.view.getVisibleSize().width/8;
 
-        let w=(Math.random()*cc.view.getVisibleSize().height/3)+cc.view.getVisibleSize().height/5;
+        let w=((Math.random()-0.5)*cc.view.getVisibleSize().height/5)+cc.view.getVisibleSize().height/4;
         var action = cc.moveTo(fallingTime,cc.v2(c,w));
         action.easing(cc.easeInOut(2));
         var destroySelf=cc.callFunc(function () {
