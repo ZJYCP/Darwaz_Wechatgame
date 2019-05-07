@@ -7,8 +7,8 @@ cc.Class({
         scrollViewContent: cc.Node,
         prefabRankItem: cc.Prefab,
         loadingLabel: cc.Node,//加载文字
-        prefabGameOverRank: cc.Prefab,
-        gameOverRankLayout: cc.Node,
+        // prefabGameOverRank: cc.Prefab,
+        // gameOverRankLayout: cc.Node,
     },
 
     start() {
@@ -76,8 +76,6 @@ cc.Class({
         }
         this.rankingScrollView.node.active = false;
         this.scrollViewContent.removeAllChildren();
-        this.gameOverRankLayout.active = false;
-        this.gameOverRankLayout.removeAllChildren();
         this.loadingLabel.getComponent(cc.Label).string = "玩命加载中...";
         this.loadingLabel.active = true;
     },
@@ -198,79 +196,79 @@ cc.Class({
             });
         }
     },
-    gameOverRank(MAIN_MENU_NUM) {
-        this.removeChild();
-        this.gameOverRankLayout.active = true;
-        if (this.CC_WECHATGAME) {
-            wx.getUserInfo({
-                openIdList: ['selfOpenId'],
-                success: (userRes) => {
-                    cc.log('success', userRes.data)
-                    let userData = userRes.data[0];
-                    //取出所有好友数据
-                    wx.getFriendCloudStorage({
-                        keyList: [MAIN_MENU_NUM],
-                        success: res => {
-                            cc.log("wx.getFriendCloudStorage success", res);
-                            this.loadingLabel.active = false;
-                            let data = res.data;
-                            data.sort((a, b) => {
-                                if (a.KVDataList.length == 0 && b.KVDataList.length == 0) {
-                                    return 0;
-                                }
-                                if (a.KVDataList.length == 0) {
-                                    return 1;
-                                }
-                                if (b.KVDataList.length == 0) {
-                                    return -1;
-                                }
-                                return b.KVDataList[0].value - a.KVDataList[0].value;
-                            });
-                            for (let i = 0; i < data.length; i++) {
-                                if (data[i].avatarUrl == userData.avatarUrl) {
-                                    if ((i - 1) >= 0) {
-                                        if ((i + 1) >= data.length && (i - 2) >= 0) {
-                                            let userItem = cc.instantiate(this.prefabGameOverRank);
-                                            userItem.getComponent('GameOverRank').init(i - 2, data[i - 2]);
-                                            this.gameOverRankLayout.addChild(userItem);
-                                        }
-                                        let userItem = cc.instantiate(this.prefabGameOverRank);
-                                        userItem.getComponent('GameOverRank').init(i - 1, data[i - 1]);
-                                        this.gameOverRankLayout.addChild(userItem);
-                                    } else {
-                                        if ((i + 2) >= data.length) {
-                                            let node = new cc.Node();
-                                            node.width = 200;
-                                            this.gameOverRankLayout.addChild(node);
-                                        }
-                                    }
-                                    let userItem = cc.instantiate(this.prefabGameOverRank);
-                                    userItem.getComponent('GameOverRank').init(i, data[i], true);
-                                    this.gameOverRankLayout.addChild(userItem);
-                                    if ((i + 1) < data.length) {
-                                        let userItem = cc.instantiate(this.prefabGameOverRank);
-                                        userItem.getComponent('GameOverRank').init(i + 1, data[i + 1]);
-                                        this.gameOverRankLayout.addChild(userItem);
-                                        if ((i - 1) < 0 && (i + 2) < data.length) {
-                                            let userItem = cc.instantiate(this.prefabGameOverRank);
-                                            userItem.getComponent('GameOverRank').init(i + 2, data[i + 2]);
-                                            this.gameOverRankLayout.addChild(userItem);
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        fail: res => {
-                            console.log("wx.getFriendCloudStorage fail", res);
-                            this.loadingLabel.getComponent(cc.Label).string = "数据加载失败，请检测网络，谢谢。";
-                        },
-                    });
-                },
-                fail: (res) => {
-                    this.loadingLabel.getComponent(cc.Label).string = "数据加载失败，请检测网络，谢谢。";
-                }
-            });
-        }
-    },
+    // gameOverRank(MAIN_MENU_NUM) {
+    //     this.removeChild();
+    //     this.gameOverRankLayout.active = true;
+    //     if (this.CC_WECHATGAME) {
+    //         wx.getUserInfo({
+    //             openIdList: ['selfOpenId'],
+    //             success: (userRes) => {
+    //                 cc.log('success', userRes.data)
+    //                 let userData = userRes.data[0];
+    //                 //取出所有好友数据
+    //                 wx.getFriendCloudStorage({
+    //                     keyList: [MAIN_MENU_NUM],
+    //                     success: res => {
+    //                         cc.log("wx.getFriendCloudStorage success", res);
+    //                         this.loadingLabel.active = false;
+    //                         let data = res.data;
+    //                         data.sort((a, b) => {
+    //                             if (a.KVDataList.length == 0 && b.KVDataList.length == 0) {
+    //                                 return 0;
+    //                             }
+    //                             if (a.KVDataList.length == 0) {
+    //                                 return 1;
+    //                             }
+    //                             if (b.KVDataList.length == 0) {
+    //                                 return -1;
+    //                             }
+    //                             return b.KVDataList[0].value - a.KVDataList[0].value;
+    //                         });
+    //                         for (let i = 0; i < data.length; i++) {
+    //                             if (data[i].avatarUrl == userData.avatarUrl) {
+    //                                 if ((i - 1) >= 0) {
+    //                                     if ((i + 1) >= data.length && (i - 2) >= 0) {
+    //                                         let userItem = cc.instantiate(this.prefabGameOverRank);
+    //                                         userItem.getComponent('GameOverRank').init(i - 2, data[i - 2]);
+    //                                         this.gameOverRankLayout.addChild(userItem);
+    //                                     }
+    //                                     let userItem = cc.instantiate(this.prefabGameOverRank);
+    //                                     userItem.getComponent('GameOverRank').init(i - 1, data[i - 1]);
+    //                                     this.gameOverRankLayout.addChild(userItem);
+    //                                 } else {
+    //                                     if ((i + 2) >= data.length) {
+    //                                         let node = new cc.Node();
+    //                                         node.width = 200;
+    //                                         this.gameOverRankLayout.addChild(node);
+    //                                     }
+    //                                 }
+    //                                 let userItem = cc.instantiate(this.prefabGameOverRank);
+    //                                 userItem.getComponent('GameOverRank').init(i, data[i], true);
+    //                                 this.gameOverRankLayout.addChild(userItem);
+    //                                 if ((i + 1) < data.length) {
+    //                                     let userItem = cc.instantiate(this.prefabGameOverRank);
+    //                                     userItem.getComponent('GameOverRank').init(i + 1, data[i + 1]);
+    //                                     this.gameOverRankLayout.addChild(userItem);
+    //                                     if ((i - 1) < 0 && (i + 2) < data.length) {
+    //                                         let userItem = cc.instantiate(this.prefabGameOverRank);
+    //                                         userItem.getComponent('GameOverRank').init(i + 2, data[i + 2]);
+    //                                         this.gameOverRankLayout.addChild(userItem);
+    //                                     }
+    //                                 }
+    //                             }
+    //                         }
+    //                     },
+    //                     fail: res => {
+    //                         console.log("wx.getFriendCloudStorage fail", res);
+    //                         this.loadingLabel.getComponent(cc.Label).string = "数据加载失败，请检测网络，谢谢。";
+    //                     },
+    //                 });
+    //             },
+    //             fail: (res) => {
+    //                 this.loadingLabel.getComponent(cc.Label).string = "数据加载失败，请检测网络，谢谢。";
+    //             }
+    //         });
+    //     }
+    // },
 
 });
