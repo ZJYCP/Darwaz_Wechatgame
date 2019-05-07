@@ -1,7 +1,7 @@
 cc.Class({
     extends: cc.Component,
     properties: {
-        backSprite: cc.Node,
+        backSprite: cc.Sprite,
         rankLabel: cc.Label,
         avatarImgSprite: cc.Sprite,
         nickLabel: cc.Label,
@@ -18,31 +18,17 @@ cc.Class({
         let nick = data.nickname;
         let grade = data.KVDataList.length != 0 ? data.KVDataList[0].value : 0;
 
-        let img_url="resources/";
-        // let img=this.rankLabel.getChildByName('img');
-        // let Sprite_rank=img.getComponent(cc.Sprite);
-        switch (rank) {
-            case 0:
-                this.cupImg.spriteFrame=new cc.SpriteFrame(cc.url.raw(img_url+'1.png'));
-                console.log('1输出');
-                // this.rankLabel.active=true
-                // img.
-                break;
-            case 1:
-                this.cupImg.spriteFrame=new cc.SpriteFrame(cc.url.raw(img_url+'2.png'));
-                break;
-            case 2:
-                this.cupImg.spriteFrame=new cc.SpriteFrame(cc.url.raw(img_url+'3.png'));
-                break;    
-            default:
-                // img.active=false;
-                this.cupImg.spriteFrame=null;
-                break;
+        //第一、二、三名有奖杯
+        if(rank<3){
+            let rank_cal=rank+1;
+            this.cupImg.spriteFrame=new cc.SpriteFrame(cc.url.raw('resources/'+rank_cal+'.png'));
         }
 
-        if (rank % 2 == 0) {
-            console.log(this.backSprite.color)
-            this.backSprite.color = new cc.Color(142, 182, 215, 255);  
+        //背景交替
+        //若使用单色sprite，更改color的方式在开发者工具上有效，真机运行都是白色的
+        if (rank % 2 != 0) {
+            this.backSprite.spriteFrame=null;
+            // this.backSprite.color = new cc.Color(142, 182, 215, 255);  
             // console.log('color change');#89C5E5
         }
 
