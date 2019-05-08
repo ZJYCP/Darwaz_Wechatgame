@@ -31,20 +31,29 @@ cc.Class({
             {
                 default:null,
                 type:cc.Button,
-            }
+            },
+        BgmButton:{
+            default: null,
+            type: cc.Button
+        }
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+        this.audioPlayer=cc.find('BgAudio').getComponent('AudioManager');
+        this.BgmButton.node.on('click',this.onAudioClick,this);
+        this.StartButton.node.on('click',this.onStartButtonClick,this);
+    },
 
     start () {
         // this.StartButton=this.node.getComponent(cc.Button);
-
+        this.audioSprite=this.BgmButton.node.getComponent(cc.Sprite);
         // 预加载
         cc.director.preloadScene("GameScene", function () {
             cc.log("game scene preloaded");
         });
+
 
         if(this.StartButton!=null)
         {
@@ -61,6 +70,22 @@ cc.Class({
     {
         console.log("Game_Start");
         cc.director.loadScene('GameScene');
+    },
+
+    onAudioClick(){
+        let BGM_Sprite=this.BgmButton.node.getComponent(cc.SpriteFrame);
+        // console.log(BGM_Sprite);
+        if (this.audioPlayer.isPlaying()){
+            this.audioPlayer.stopBgAudio();
+            //TODO
+
+            BGM_Sprite=new cc.SpriteFrame(cc.url.raw('resources/Texture/musicClose.png'))
+        } else {
+            this.audioPlayer.playBGM();
+            BGM_Sprite=new cc.SpriteFrame(cc.url.raw('resources/Texture/musicOn.png'));
+        }
     }
+
+
     // update (dt) {},
 });
