@@ -97,7 +97,22 @@ cc.Class({
 
     closeIntro(){
         this.introduction.active=false;
-    }
+    },
+    onRestartButtonDown(event, customEventData) {
+        // var go = cc.find("GameOverTip");
+        // if (go) {
+        //     go.active =false;
+        // }
+
+        // window.GM.gameOver = !window.GM.gameOver;
+        // window.GM.characterController.state=0;
+        // window.GM.characterController.node.rotation=0;
+        // window.GM.distance=0;
+        // window.GM.windManager.windPower=0;
+        // window.GM.windManager.windText.string = "Wind Power: " + 0;
+
+        cc.director.loadScene('GameScene');
+    },
 
     // update (dt) {},
 });
