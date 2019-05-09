@@ -15,9 +15,6 @@
     "_children": [
       {
         "__id__": 2
-      },
-      {
-        "__id__": 60
       }
     ],
     "_active": true,
@@ -44,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.4524658203125,
-      "y": 0.4524658203125,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_quat": {
@@ -78,23 +75,23 @@
         "__id__": 8
       },
       {
-        "__id__": 70
+        "__id__": 68
       },
       {
         "__id__": 22
       },
       {
-        "__id__": 20
+        "__id__": 29
       },
       {
-        "__id__": 29
+        "__id__": 20
       }
     ],
     "_active": true,
     "_level": 0,
     "_components": [
       {
-        "__id__": 72
+        "__id__": 70
       }
     ],
     "_prefab": null,
@@ -360,17 +357,17 @@
         "__id__": 15
       },
       {
-        "__id__": 64
+        "__id__": 62
       }
     ],
     "_active": true,
     "_level": 1,
     "_components": [
       {
-        "__id__": 68
+        "__id__": 66
       },
       {
-        "__id__": 69
+        "__id__": 67
       }
     ],
     "_prefab": null,
@@ -713,7 +710,7 @@
     "_level": 2,
     "_components": [
       {
-        "__id__": 63
+        "__id__": 61
       }
     ],
     "_prefab": null,
@@ -953,7 +950,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "rankingView",
+    "_name": "OverManger",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -2555,7 +2552,7 @@
         "__id__": 58
       },
       {
-        "__id__": 62
+        "__id__": 60
       }
     ],
     "_prefab": null,
@@ -2719,85 +2716,12 @@
   {
     "__type__": "cc.ClickEvent",
     "target": {
-      "__id__": 60
+      "__id__": 20
     },
     "component": "",
-    "_componentId": "c265cLxuwtGG7hdz+wB2OXF",
+    "_componentId": "7505bZuJQhNyLZu8P1d9xLo",
     "handler": "onRestartButtonDown",
     "customEventData": ""
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "ButtonClickEvents",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_level": 1,
-    "_components": [
-      {
-        "__id__": 61
-      }
-    ],
-    "_prefab": null,
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 0,
-      "height": 0
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
-    },
-    "_rotationX": 0,
-    "_rotationY": 0,
-    "_quat": {
-      "__type__": "cc.Quat",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 1
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_zIndex": 0,
-    "groupIndex": 0,
-    "_id": "baTm0TiIdHyYZjHtOv8REA"
-  },
-  {
-    "__type__": "c265cLxuwtGG7hdz+wB2OXF",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 60
-    },
-    "_enabled": true,
-    "touchPanel": null,
-    "persistNode": null,
-    "_id": "81WSMjHYVIJaYyYLWfWha2"
   },
   {
     "__type__": "cc.Widget",
@@ -2871,10 +2795,10 @@
     "_level": 2,
     "_components": [
       {
-        "__id__": 65
+        "__id__": 63
       },
       {
-        "__id__": 66
+        "__id__": 64
       }
     ],
     "_prefab": null,
@@ -2928,7 +2852,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 64
+      "__id__": 62
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -2956,14 +2880,14 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 64
+      "__id__": 62
     },
     "_enabled": true,
     "duration": 0.1,
     "zoomScale": 1.2,
     "clickEvents": [
       {
-        "__id__": 67
+        "__id__": 65
       }
     ],
     "_N$interactable": true,
@@ -3019,7 +2943,7 @@
     "hoverSprite": null,
     "_N$disabledSprite": null,
     "_N$target": {
-      "__id__": 64
+      "__id__": 62
     },
     "_id": "7fW7gm28xFuYhgancKP1xJ"
   },
@@ -3100,7 +3024,7 @@
     "_level": 1,
     "_components": [
       {
-        "__id__": 71
+        "__id__": 69
       }
     ],
     "_prefab": null,
@@ -3154,7 +3078,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 70
+      "__id__": 68
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
