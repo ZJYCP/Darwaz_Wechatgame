@@ -1,0 +1,109 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "BirdFly",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1.5,
+  "sample": 4,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": -0.25,
+            "value": {
+              "__uuid__": "e64e73e7-5240-48c9-846a-8e0a9024469d"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "ffd3eb22-5d01-427a-85df-74016bbdeb80"
+            }
+          },
+          {
+            "frame": 0.75,
+            "value": {
+              "__uuid__": "b9b7f4e7-34de-4ec1-859f-18c25d6848df"
+            }
+          },
+          {
+            "frame": 1.25,
+            "value": {
+              "__uuid__": "ffd3eb22-5d01-427a-85df-74016bbdeb80"
+            }
+          }
+        ]
+      }
+    },
+    "paths": {
+      "BirdSprite": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": [
+              {
+                "frame": 0,
+                "value": {
+                  "__uuid__": "e64e73e7-5240-48c9-846a-8e0a9024469d"
+                }
+              },
+              {
+                "frame": 0.25,
+                "value": {
+                  "__uuid__": "ffd3eb22-5d01-427a-85df-74016bbdeb80"
+                }
+              },
+              {
+                "frame": 0.5,
+                "value": {
+                  "__uuid__": "b9b7f4e7-34de-4ec1-859f-18c25d6848df"
+                }
+              },
+              {
+                "frame": 0.75,
+                "value": {
+                  "__uuid__": "ffd3eb22-5d01-427a-85df-74016bbdeb80"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "蓝飞": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": [
+              {
+                "frame": -0.25,
+                "value": {
+                  "__uuid__": "e64e73e7-5240-48c9-846a-8e0a9024469d"
+                }
+              },
+              {
+                "frame": 0.25,
+                "value": {
+                  "__uuid__": "ffd3eb22-5d01-427a-85df-74016bbdeb80"
+                }
+              },
+              {
+                "frame": 0.75,
+                "value": {
+                  "__uuid__": "b9b7f4e7-34de-4ec1-859f-18c25d6848df"
+                }
+              },
+              {
+                "frame": 1.25,
+                "value": {
+                  "__uuid__": "e64e73e7-5240-48c9-846a-8e0a9024469d"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "events": []
+}

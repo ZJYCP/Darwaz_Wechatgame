@@ -31,7 +31,7 @@ cc.Class({
         {
             default:null,
             type:cc.Node,
-        }
+        },
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -54,6 +54,15 @@ cc.Class({
             this.node.dispatchEvent( new cc.Event.EventCustom('BicycleEvent', true) );
             other.node.destroy();
             // this.opera.onBicyleKilled(other)
+        }
+        if (itemname.indexOf("Bird") != -1) {
+            var Pos = other.node.convertToWorldSpaceAR(cc.v2(100, 100));
+            window.GM.CollisionPos= cc.v2(Pos.x,Pos.y);
+            console.log("window",Pos.x,Pos.y);
+            this.node.dispatchEvent(new cc.Event.EventCustom('BirdEvent', true) );
+
+            other.node.destroy();
+
         }
         /* // 碰撞系统会计算出碰撞组件在世界坐标系下的相关的值，并放到 world 这个属性里面
          var world = self.world;

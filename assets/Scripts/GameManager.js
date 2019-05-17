@@ -10,6 +10,7 @@
 var customWind = require("CustomWind");
 var ropeMove = require("RopeMove");
 var characterCon = require("CharacterController");
+var collisionpos = require("StickCollision");
 cc.Class({
     extends: cc.Component,
 
@@ -55,6 +56,12 @@ cc.Class({
                 default: null,
                 type: characterCon,
             },
+        CollisionPos:
+            {
+                default: null,
+                type:  collisionpos,
+
+            }
 
 
 

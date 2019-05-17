@@ -1,0 +1,55 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "BirdStay",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 2,
+  "sample": 3,
+  "speed": 1,
+  "wrapMode": "1",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "24068a84-06f8-4ae6-85cc-2f63c51c0427"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "3b3aa21f-261d-4e2e-b1f0-14479986ab40"
+            }
+          },
+          {
+            "frame": 0.6666666666666666,
+            "value": {
+              "__uuid__": "07873da2-a17f-4680-89f0-53a002d024b1"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "40937d0d-2a41-4475-9c48-dc702bf18026"
+            }
+          },
+          {
+            "frame": 1.3333333333333333,
+            "value": {
+              "__uuid__": "e3c6959c-0ab0-4806-b0f0-70da167c99f0"
+            }
+          },
+          {
+            "frame": 1.6666666666666667,
+            "value": {
+              "__uuid__": "8fa40900-5701-4982-b9d7-54af305a28b1"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

@@ -50,6 +50,7 @@ cc.Class({
     start() {
 
         // this.Fog = cc.find("Fog");
+        this.schedule(this.BirdFly.bind(this), 10, cc.macro.REPEAT_FOREVER);
         this.schedule(this.BombFallDown.bind(this), 5, cc.macro.REPEAT_FOREVER);
         this.schedule(this.BicycleFallDown.bind(this), 15, cc.macro.REPEAT_FOREVER);
         // this.scheduleOnce(this.fogShow.bind(this),2);
@@ -75,6 +76,35 @@ cc.Class({
                 let bi = newbomb.getComponent("BombItem");
                 if (bi != null) {
                     bi.DoFallingAction(4);
+                }
+            }
+        }
+    },
+
+    BirdFly() {
+        let gm = window.GM;
+        if (gm.gameStart && (!gm.gamePause) && (!gm.gameOver)) {
+            if (this.Bird) {
+                let newbomb = cc.instantiate(this.Bird);
+                newbomb.parent = this.node;
+
+                let randomNumber = Math.random();//随机指定区域,后面再改
+                if (randomNumber > 0 && randomNumber < 0.1) {
+                    randomNumber += 0.2;
+                }else if (randomNumber >0.1&&randomNumber <0.2) {
+                    randomNumber += 0.1;
+                } else if (randomNumber > 0.5 && randomNumber < 0.75) {
+                    randomNumber -= 0.2;
+                }
+                else if(randomNumber > 0.75)
+                {
+                    randomNumber -= 0.35;
+                }
+                randomNumber *= cc.view.getVisibleSize().height;
+                newbomb.setPosition(-10,randomNumber );
+                let bi = newbomb.getComponent("BirdItem");
+                if (bi != null) {
+                    bi.DoFlyingAction(4);
                 }
             }
         }
@@ -144,6 +174,22 @@ cc.Class({
         this.Fog.runAction(action);
 
         this.Fog.setPosition(cc.v2(-1017, -305));
+
+
+    },
+
+    changeBird(){
+
+        cc.log('changeBird');
+        let newbomb = cc.instantiate(this.Bird);
+        newbomb.parent = this.node;
+        newbomb.destroy()
+        cc.log('distroy');
+        // let anim = bbb.getComponent(cc.Animation);
+        // anim.play()
+        setTimeout(() => {
+
+        }, 5000);
 
 
     },

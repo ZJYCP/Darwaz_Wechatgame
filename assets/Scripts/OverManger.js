@@ -27,7 +27,6 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        showRank: cc.Node,
         rankingView: cc.Node,
         score: cc.Label,
         introduction:cc.Node,
@@ -43,20 +42,21 @@ cc.Class({
         if(window.GM){
             this.score.string = parseInt(window.GM.distance);
 
+            if (CC_WECHATGAME) {
+                // 发消息给子域
+                wx.getOpenDataContext().postMessage({
+                    messageType: 2,
+                    score: parseInt(window.GM.distance)
+                });
+            } else {
+                cc.log("发送分数开放数据域");
+            }
         }
         // }
         this.initAction();
         // console.log('aa'+window.GM.distance)
 
-        if (CC_WECHATGAME) {
-            // 发消息给子域
-            wx.getOpenDataContext().postMessage({
-                messageType: 2,
-                score: parseInt(window.GM.distance)
-            });
-        } else {
-            cc.log("发送分数开放数据域");
-        }
+
 
     },
     initAction() {

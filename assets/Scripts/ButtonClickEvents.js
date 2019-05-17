@@ -102,6 +102,10 @@ cc.Class({
 
     },
 
+    goback(){
+        cc.director.loadScene('StartScene');
+    }
+
 
     // update (dt) {},
 });
