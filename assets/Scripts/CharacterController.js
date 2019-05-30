@@ -231,8 +231,10 @@ cc.Class({
             let aaa = this.node.getChildByName("BirdStay");
             let bbb = this.node.getChildByName("flyaway");
 
-            let Pos = cc.v2(window.GM.CollisionPos.x - this.node.x, window.GM.CollisionPos.y - this.node.y-50);
-
+            let Pos = cc.v2(window.GM.CollisionPos.x-this.node.x , window.GM.CollisionPos.y-this.node.y );
+            let poss=this.node.convertToNodeSpaceAR(window.GM.worldpos);
+            cc.log(poss.x);
+            Pos=cc.v2(poss.x,poss.y-60);
             console.log("Pos", Pos.x, Pos.y);
             aaa.setPosition(Pos.x, Pos.y);
             aaa.active = true;
@@ -254,7 +256,7 @@ cc.Class({
                 if (bi != null) {
                     bi.Flyaway();
                 }
-            }, 2000);
+            }, 4000);
             if (!window.GM.gameOver) {
                 bbb.active = false;
             }

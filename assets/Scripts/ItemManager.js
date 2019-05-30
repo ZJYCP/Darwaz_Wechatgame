@@ -50,9 +50,9 @@ cc.Class({
     start() {
 
         // this.Fog = cc.find("Fog");
-        this.schedule(this.BirdFly.bind(this), 10, cc.macro.REPEAT_FOREVER);
-        this.schedule(this.BombFallDown.bind(this), 5, cc.macro.REPEAT_FOREVER);
-        this.schedule(this.BicycleFallDown.bind(this), 15, cc.macro.REPEAT_FOREVER);
+        this.schedule(this.BirdFly.bind(this), 19, cc.macro.REPEAT_FOREVER);
+        this.schedule(this.BombFallDown.bind(this), 11, cc.macro.REPEAT_FOREVER);
+        this.schedule(this.BicycleFallDown.bind(this), 31, cc.macro.REPEAT_FOREVER);
         // this.scheduleOnce(this.fogShow.bind(this),2);
 
 
@@ -198,7 +198,7 @@ cc.Class({
         let gm = window.GM;
         if (gm.gameStart && (!gm.gamePause) && (!gm.gameOver)) {
             let distCaculate = parseInt(window.GM.distance % 10) + 1;
-            if (distCaculate % 16 == 0 && parseInt(Math.random() * 10) < 1 && this.fogStatus == 0) {
+            if (distCaculate % 16 == 0 && parseInt(Math.random() * 10) < 2 && this.fogStatus == 0) {
                 this.fogStatus = 1;
                 this.fogShow();
                 // console.log('ssa'+window.GM.distance)

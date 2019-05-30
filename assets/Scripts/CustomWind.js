@@ -62,10 +62,10 @@ cc.Class({
                     if (this.windText != null) {
                         this.windText.string = "0";
                     }
-                }, 3000);
+                }, 4000);
             }
 
-        }.bind(this),10,cc.macro.REPEAT_FOREVER);
+        }.bind(this),13,cc.macro.REPEAT_FOREVER);
     },
 
     // update (dt) {},

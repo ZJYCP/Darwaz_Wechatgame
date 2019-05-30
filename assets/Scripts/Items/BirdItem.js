@@ -41,7 +41,7 @@ cc.Class({
     {     
                     
         var action = cc.moveTo(2,cc.v2(336,336));
-        action.easing(cc.easeInOut(2));
+        action.easing(cc.easeInOut(1));
         var destroySelf=cc.callFunc(function () {
             if(cc.isValid(this.node)){
                 this.node.destroy()
@@ -54,7 +54,7 @@ cc.Class({
     },
     Flyaway(){
      var action = cc.moveTo(2,cc.v2(cc.view.getVisibleSize().width+1000,436));
-        action.easing(cc.easeInOut(2));
+        action.easing(cc.easeInOut(1));
         var destroySelf=cc.callFunc(function () {
             if(cc.isValid(this.node)&& this.active ){
                 this.active = false;
