@@ -26,20 +26,7 @@
   ],
   "design-resolution-height": 640,
   "design-resolution-width": 960,
-  "excluded-modules": [
-    "TiledMap",
-    "Spine Skeleton",
-    "DragonBones",
-    "RichText",
-    "MotionStreak",
-    "ScrollBar",
-    "ScrollView",
-    "Toggle",
-    "PageView",
-    "PageViewIndicator",
-    "Slider",
-    "EditBox"
-  ],
+  "excluded-modules": [],
   "facebook": {
     "appID": "",
     "audience": {
@@ -58,13 +45,12 @@
     "Item",
     "Obstacle"
   ],
-  "last-module-event-record-time": 1557749383622,
+  "last-module-event-record-time": 1559194555894,
   "simulator-orientation": false,
   "simulator-resolution": {
     "height": 640,
     "width": 960
   },
-  "start-scene": "current",
   "use-customize-simulator": false,
   "use-project-simulator-setting": false
 }

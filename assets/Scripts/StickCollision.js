@@ -56,7 +56,7 @@ cc.Class({
             // this.opera.onBicyleKilled(other)
         }
         if (itemname.indexOf("Bird") != -1) {
-            var Pos = other.node.convertToWorldSpaceAR(cc.v2(100, 100));
+            var Pos = other.node.convertToWorldSpaceAR(cc.v2(0,0));
             window.GM.CollisionPos= cc.v2(Pos.x,Pos.y);
             console.log("window",Pos.x,Pos.y);
             this.node.dispatchEvent(new cc.Event.EventCustom('BirdEvent', true) );

@@ -33,6 +33,7 @@ cc.Class({
             default:null,
             type:cc.Label,
         },
+        wind_img:cc.Sprite,
 
     },
 
@@ -48,7 +49,13 @@ cc.Class({
             if (gm.gameStart && (!gm.gamePause) && (!gm.gameOver)) {
                 this.windPower = -3 + 6 * Math.random();
                 if (this.windText != null) {
-                    this.windText.string = "" + Math.floor(this.windPower);
+                    this.windText.string = "" + Math.abs(Math.floor(this.windPower)) ;
+                }
+                if(this.windPower<0){
+                    cc.loader.loadRes('Textures/gameScene/wind_right', cc.SpriteFrame, function (err, spriteFrame) {
+                        // console.log(spriteFrame);
+                        this.wind_img.spriteFrame = spriteFrame;
+                    }.bind(this));
                 }
                 setTimeout(() => {
                     this.windPower=0;

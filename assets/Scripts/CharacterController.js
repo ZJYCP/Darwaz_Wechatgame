@@ -171,7 +171,7 @@ cc.Class({
                 // this.state+=Math.pow(this.node.rotation/10,2)/1000;
             }
             // if (gm) {
-                this.state =this.state+gm.windManager.windPower * 0.2 * dt+this.BirdWeight *0.5* dt;
+                this.state =this.state+gm.windManager.windPower * 0.1 * dt+this.BirdWeight *0.5* dt;
 
             // }
 
@@ -205,7 +205,7 @@ cc.Class({
         //     // 这里的 this 指向 component
         //     window.GM.ropeMove.moveSpeed = 20;
         // }, 3);
-        window.GM.distance-=10;
+        window.GM.distance-=6;
     },
 
     onBicycleEvent(event) {
@@ -231,17 +231,17 @@ cc.Class({
             let aaa = this.node.getChildByName("BirdStay");
             let bbb = this.node.getChildByName("flyaway");
 
-            let Pos = cc.v2(window.GM.CollisionPos.x - this.node.x, window.GM.CollisionPos.y - this.node.y);
+            let Pos = cc.v2(window.GM.CollisionPos.x - this.node.x, window.GM.CollisionPos.y - this.node.y-50);
 
             console.log("Pos", Pos.x, Pos.y);
             aaa.setPosition(Pos.x, Pos.y);
             aaa.active = true;
             bbb.setPosition(Pos.x, Pos.y);
             if (aaa.getPosition().x < 0) {
-                this.BirdWeight = -1 + Pos.x * 0.01;
+                this.BirdWeight = -0.5 + Pos.x * 0.01;
             }
             else {
-                this.BirdWeight = 1 + Pos.x * 0.01;
+                this.BirdWeight = 0.5 + Pos.x * 0.01;
             }
 
             setTimeout(() => {
