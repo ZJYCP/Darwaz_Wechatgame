@@ -15,6 +15,8 @@ cc.Class({
         touchPanel: cc.Node,
         // persistNode:cc.Node,
         gameAudioBtn: cc.Button,
+        introduction:cc.Node,
+        score:cc.Label,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -57,6 +59,7 @@ cc.Class({
             return;
         }
         window.GM.gamePause = !window.GM.gamePause;
+        this.score.string=parseInt(window.GM.distance);
         this.audioPlayer.pauseBGM();
         var pt = cc.find("Canvas/PauseTip");
         if (pt) {
@@ -103,7 +106,16 @@ cc.Class({
     },
 
     goback(){
+        cc.director.pause();
         cc.director.loadScene('StartScene');
+    },
+
+    showIntrodection(){
+        this.introduction.active=true;
+    },
+
+    hideIntrodection(){
+        this.introduction.active=false;
     }
 
 

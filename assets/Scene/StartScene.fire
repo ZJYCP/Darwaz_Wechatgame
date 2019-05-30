@@ -47,8 +47,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.45167236328125,
-      "y": 0.45167236328125,
+      "x": 0.4516845703125,
+      "y": 0.4516845703125,
       "z": 1
     },
     "_quat": {
@@ -1493,7 +1493,9 @@
   },
   {
     "__type__": "cc.ClickEvent",
-    "target": null,
+    "target": {
+      "__id__": 20
+    },
     "component": "",
     "_componentId": "7505bZuJQhNyLZu8P1d9xLo",
     "handler": "closeBtuuonFun",
@@ -1758,7 +1760,7 @@
     },
     "_enabled": true,
     "bgAudio": {
-      "__uuid__": "e2075e31-946a-4703-b84f-c94cbe03d804"
+      "__uuid__": "63f6e885-aaca-451d-b53b-658420c0a280"
     },
     "playState": false,
     "_id": "76PIVBJgZMmJUYHzGjXcd+"

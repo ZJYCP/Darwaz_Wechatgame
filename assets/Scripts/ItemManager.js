@@ -198,7 +198,7 @@ cc.Class({
         let gm = window.GM;
         if (gm.gameStart && (!gm.gamePause) && (!gm.gameOver)) {
             let distCaculate = parseInt(window.GM.distance % 10) + 1;
-            if (distCaculate % 16 == 0 && parseInt(Math.random() * 10) < 2 && this.fogStatus == 0) {
+            if (distCaculate % 16 == 0 && parseInt(Math.random() * 10) < 4 && this.fogStatus == 0) {
                 this.fogStatus = 1;
                 this.fogShow();
                 // console.log('ssa'+window.GM.distance)
