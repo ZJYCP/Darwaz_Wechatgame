@@ -1493,7 +1493,9 @@
   },
   {
     "__type__": "cc.ClickEvent",
-    "target": null,
+    "target": {
+      "__id__": 20
+    },
     "component": "",
     "_componentId": "7505bZuJQhNyLZu8P1d9xLo",
     "handler": "closeBtuuonFun",
@@ -1758,7 +1760,7 @@
     },
     "_enabled": true,
     "bgAudio": {
-      "__uuid__": "8fac6362-4202-49c4-9e1f-4634eb3371e0"
+      "__uuid__": "63f6e885-aaca-451d-b53b-658420c0a280"
     },
     "playState": false,
     "_id": "76PIVBJgZMmJUYHzGjXcd+"

@@ -40,7 +40,8 @@ cc.Class({
     DoFallingAction(fallingTime)
     {
         var action = cc.moveBy(fallingTime,cc.v2(0,-cc.view.getVisibleSize().height*1.5));
-        action.easing(cc.easeInOut(0.9));
+        // action.easing(cc.easeInOut(0.6));
+        action.easing(cc.easeIn(3));
         var destroySelf=cc.callFunc(function () {
             if(cc.isValid(this.node)){
                 this.node.destroy()
