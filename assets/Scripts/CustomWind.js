@@ -56,6 +56,11 @@ cc.Class({
                         // console.log(spriteFrame);
                         this.wind_img.spriteFrame = spriteFrame;
                     }.bind(this));
+                }else{
+                    cc.loader.loadRes('Textures/gameScene/wind_left', cc.SpriteFrame, function (err, spriteFrame) {
+                        // console.log(spriteFrame);
+                        this.wind_img.spriteFrame = spriteFrame;
+                    }.bind(this));
                 }
                 setTimeout(() => {
                     this.windPower=0;

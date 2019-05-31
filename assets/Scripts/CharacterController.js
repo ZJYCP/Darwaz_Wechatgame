@@ -171,7 +171,7 @@ cc.Class({
                 // this.state+=Math.pow(this.node.rotation/10,2)/1000;
             }
             // if (gm) {
-                this.state =this.state+gm.windManager.windPower * 0.1 * dt+this.BirdWeight *0.5* dt;
+                this.state =this.state+gm.windManager.windPower * 0.2 * dt+this.BirdWeight *0.5* dt;
 
             // }
 
@@ -205,6 +205,11 @@ cc.Class({
         //     // 这里的 this 指向 component
         //     window.GM.ropeMove.moveSpeed = 20;
         // }, 3);
+        if(CC_WECHATGAME){
+            wx.vibrateLong();
+        }else{
+            cc.log('振动');
+        }
         window.GM.distance-=6;
     },
 
