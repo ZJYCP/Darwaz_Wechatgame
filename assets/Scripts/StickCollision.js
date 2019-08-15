@@ -48,6 +48,9 @@ cc.Class({
         var itemname = other.node.name;
         if (itemname.indexOf("Bomb") != -1) {
             this.node.dispatchEvent( new cc.Event.EventCustom('BombEvent', true) );
+            if(CC_WECHATGAME){
+                wx.vibrateLong()
+            }
            other.node.destroy();
         }
         if (itemname.indexOf("Bicycle") != -1) {

@@ -17,6 +17,18 @@ cc.Class({
             default: null,
             type: cc.Node,
         },
+        cambel:{
+            default:null,
+            type:cc.Prefab,
+        },
+        milk:{
+            default:null,
+            type:cc.Prefab,
+        },
+        shui:{
+            default:null,
+            type:cc.Prefab,
+        },
         Bomb:
         {
             default: null,
@@ -32,7 +44,13 @@ cc.Class({
             default: null,
             type: cc.Prefab,
         },
-        fogStatus: 0
+        fogStatus: 0,
+
+        bing:{
+            type:cc.AudioSource,
+            default:null
+        }
+
 
     },
 
@@ -45,6 +63,7 @@ cc.Class({
         //     let bicyle = cc.instantiate(this.Bicycle); // 创建节点
         //     this.biyclePool.put(bicyle); // 通过 put 接口放入对象池
         // }
+
     },
 
     start() {
@@ -53,7 +72,19 @@ cc.Class({
         this.schedule(this.BirdFly.bind(this), 19, cc.macro.REPEAT_FOREVER);
         this.schedule(this.BombFallDown.bind(this), 11, cc.macro.REPEAT_FOREVER);
         this.schedule(this.BicycleFallDown.bind(this), 31, cc.macro.REPEAT_FOREVER);
+        this.schedule(this.cambelShow.bind(this), 15, cc.macro.REPEAT_FOREVER);
+
+        // this.node.on('cambelClick',this.clickcambel(),this);
+        // this.node.on('cambelClick', function ( event ) {
+        //     console.log('外面收集到了')
+        // }.bind(this));
         // this.scheduleOnce(this.fogShow.bind(this),2);
+
+        if(CC_WECHATGAME){
+            this.winbg=wx.getStorageSync('win_BG')
+        }else{
+            this.winbg=window.BG||"Textures/gameScene/default"
+        }
 
 
 
@@ -111,6 +142,44 @@ cc.Class({
         }
     },
 
+    cambelShow(){
+        let gm = window.GM;
+        if (gm.gameStart && (!gm.gamePause) && (!gm.gameOver)) {
+            if (this.cambel||this.shui||this.milk) {
+                let newCambel=null
+                if((this.winbg).indexOf('default')>=0){
+                    newCambel = cc.instantiate(this.shui);
+                }else if((this.winbg).indexOf('desert')>=0){
+                    newCambel = cc.instantiate(this.cambel);
+                }else if((this.winbg).indexOf('snow')>=0){
+                    newCambel = cc.instantiate(this.milk);
+                }
+                newCambel.parent = this.node;
+                // newCambel.on('click',this.clickcambel(newCambel),this);
+                console.log('luotuo appera')
+                let randomNumber = Math.random();
+                randomNumber=(parseInt(randomNumber*100)%30+30)/100;
+                randomNumber *= cc.view.getVisibleSize().height;
+                let appera_width=cc.view.getVisibleSize().width*Math.random()
+                let appera_height=cc.view.getVisibleSize().height*(parseInt(randomNumber*100)%30+10)/100
+                console.log(appera_width,appera_height)
+                newCambel.setPosition(appera_width,appera_height );
+                let cambel = newCambel.getComponent("cambel");
+                
+                if (cambel != null) {
+                    // bi.DoFlyingAction(4);
+                    cambel.ShowAction();
+                }
+            }
+        }
+    },
+
+    // clickcambel(){
+
+    //     // cambel.destroy();
+    //     console.log('加分加分加分')
+    // },
+
     createBicyle(parentNode) {
         let bicyle = null;
         if (this.biyclePool.size() > 0) {
@@ -164,7 +233,7 @@ cc.Class({
         console.log(cc.isValid(this.Fog))
         setTimeout(() => {
             this.fogStatus = 0;
-        }, 60000);
+        }, 30000);
         let action = cc.sequence(
             cc.moveTo(4, cc.v2(-65, -305))
             , cc.delayTime(5)
@@ -192,13 +261,17 @@ cc.Class({
 
         }, 5000);
 
-
     },
     update(dt) {
         let gm = window.GM;
         if (gm.gameStart && (!gm.gamePause) && (!gm.gameOver)) {
-            let distCaculate = parseInt(window.GM.distance % 10) + 1;
-            if (distCaculate % 16 == 0 && parseInt(Math.random() * 10) < 4 && this.fogStatus == 0) {
+            // let distCaculate = parseInt(window.GM.distance % 10) + 1;
+            if(window.master==1){
+                window.master=0
+                this.bing.play();
+            }
+            let distCaculate=parseInt(window.GM.distance)+1
+            if (distCaculate % 16 == 0 && parseInt(Math.random() * 10) < 3 && this.fogStatus == 0) {
                 this.fogStatus = 1;
                 this.fogShow();
                 // console.log('ssa'+window.GM.distance)

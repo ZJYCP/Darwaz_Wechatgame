@@ -23,12 +23,12 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        cc.game.addPersistRootNode(this.node);
-        this.playBGM();
+
     },
 
     start () {
-
+        cc.game.addPersistRootNode(this.node);
+        this.playBGM();
     },
 
     isPlaying(){

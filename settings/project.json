@@ -45,13 +45,13 @@
     "Item",
     "Obstacle"
   ],
-  "last-module-event-record-time": 1559194555894,
+  "last-module-event-record-time": 1565708467946,
   "simulator-orientation": false,
   "simulator-resolution": {
     "height": 640,
     "width": 960
   },
+  "start-scene": "current",
   "use-customize-simulator": false,
-  "use-project-simulator-setting": false,
-  "start-scene": "current"
+  "use-project-simulator-setting": false
 }

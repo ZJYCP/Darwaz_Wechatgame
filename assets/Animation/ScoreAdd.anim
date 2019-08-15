@@ -1,0 +1,98 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "ScoreAdd",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.92,
+  "sample": 25,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": []
+      }
+    },
+    "props": {
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            45,
+            -133
+          ],
+          "motionPath": []
+        },
+        {
+          "frame": 0.36,
+          "value": [
+            47,
+            4
+          ],
+          "motionPath": []
+        },
+        {
+          "frame": 0.6,
+          "value": [
+            46,
+            51
+          ],
+          "motionPath": []
+        },
+        {
+          "frame": 0.84,
+          "value": [
+            50,
+            104
+          ],
+          "motionPath": []
+        }
+      ],
+      "scale": [
+        {
+          "frame": 0,
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "frame": 0.36,
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": 0.8,
+            "y": 0.8
+          }
+        },
+        {
+          "frame": 0.92,
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": 0.8,
+            "y": 0.8
+          }
+        }
+      ],
+      "opacity": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 0.36,
+          "value": 184.63529999919092
+        },
+        {
+          "frame": 0.6,
+          "value": 255
+        },
+        {
+          "frame": 0.84,
+          "value": 9
+        }
+      ]
+    }
+  },
+  "events": []
+}

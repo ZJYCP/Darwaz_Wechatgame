@@ -44,6 +44,33 @@ cc.Class({
     },
 
     start () {
+        let gm = window.GM;
+        setTimeout(()=>{
+            if (gm.gameStart && (!gm.gamePause) && (!gm.gameOver)) {
+                this.windPower =-3 + 6 * Math.random();;
+                if (this.windText != null) {
+                    this.windText.string = "" + Math.abs(Math.floor(this.windPower)) ;
+                }
+                if(this.windPower<0){
+                    cc.loader.loadRes('Textures/gameScene/wind_right', cc.SpriteFrame, function (err, spriteFrame) {
+                        // console.log(spriteFrame);
+                        this.wind_img.spriteFrame = spriteFrame;
+                    }.bind(this));
+                }else{
+                    cc.loader.loadRes('Textures/gameScene/wind_left', cc.SpriteFrame, function (err, spriteFrame) {
+                        // console.log(spriteFrame);
+                        this.wind_img.spriteFrame = spriteFrame;
+                    }.bind(this));
+                }
+                setTimeout(() => {
+                    this.windPower=0;
+                    if (this.windText != null) {
+                        this.windText.string = "0";
+                    }
+                }, 4000);
+            }
+        },1000)
+
         this.schedule(function () {
             let gm = window.GM;
             if (gm.gameStart && (!gm.gamePause) && (!gm.gameOver)) {
@@ -53,6 +80,11 @@ cc.Class({
                 }
                 if(this.windPower<0){
                     cc.loader.loadRes('Textures/gameScene/wind_right', cc.SpriteFrame, function (err, spriteFrame) {
+                        // console.log(spriteFrame);
+                        this.wind_img.spriteFrame = spriteFrame;
+                    }.bind(this));
+                }else{
+                    cc.loader.loadRes('Textures/gameScene/wind_left', cc.SpriteFrame, function (err, spriteFrame) {
                         // console.log(spriteFrame);
                         this.wind_img.spriteFrame = spriteFrame;
                     }.bind(this));

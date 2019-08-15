@@ -3,26 +3,56 @@
   "_name": "CharacterAnimation",
   "_objFlags": 0,
   "_native": "",
-  "_duration": 1,
-  "sample": 60,
+  "_duration": 1.5,
+  "sample": 6,
   "speed": 1,
-  "wrapMode": "2",
+  "wrapMode": 2,
   "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "c8bb1773-5d72-40ed-9650-9f155c4e3cf3"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "939b7492-875f-4a3f-81a0-d42734c53220"
+            }
+          },
+          {
+            "frame": 0.6666666666666666,
+            "value": {
+              "__uuid__": "9c666ff1-ebaa-4838-a157-3e57080337d2"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "c8bb1773-5d72-40ed-9650-9f155c4e3cf3"
+            }
+          },
+          {
+            "frame": 1.3333333333333333,
+            "value": {
+              "__uuid__": "5141b7a4-cff4-4196-8af3-405808d21d9a"
+            }
+          }
+        ]
+      }
+    },
     "props": {
-      "scaleX": [
+      "scale": [
         {
           "frame": 0,
-          "value": 1,
-          "curve": "constant"
-        },
-        {
-          "frame": 0.5,
-          "value": -1,
-          "curve": "constant"
-        },
-        {
-          "frame": 1,
-          "value": 1
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": 0.7,
+            "y": 0.7
+          }
         }
       ]
     }

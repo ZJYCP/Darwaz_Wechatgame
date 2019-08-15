@@ -17,6 +17,7 @@ cc.Class({
         gameAudioBtn: cc.Button,
         introduction:cc.Node,
         score:cc.Label,
+        BgImg:cc.Sprite
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -26,6 +27,12 @@ cc.Class({
         this.audioIcon = music.getComponent(cc.Sprite);
         this.audioPlayer = cc.find("BgAudio").getComponent("AudioManager");
         this.gameAudioBtn.node.on('click',this.onAudioClick,this);
+        // this.bg_image=this.BgImg.node.getComponent(cc.Sprite);
+        cc.loader.loadRes(window.BG, cc.SpriteFrame, function (err, spriteFrame) {
+            // console.log(spriteFrame);
+            this.BgImg.spriteFrame = spriteFrame;
+        }.bind(this));
+        cc.director.resume()
     },
 
     start() {
@@ -108,6 +115,8 @@ cc.Class({
     goback(){
         cc.director.pause();
         cc.director.loadScene('StartScene');
+        // cc.director.runSceneImmediate('StartScene')
+        // cc.director.replaceScene('StartScene')
     },
 
     showIntrodection(){

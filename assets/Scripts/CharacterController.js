@@ -67,6 +67,10 @@ cc.Class({
         this.BirdWeight = 0;
         let aaa = this.node.getChildByName("BirdStay");
         let bbb = this.node.getChildByName("flyaway");
+        let drop1 = this.node.getChildByName('drop1');
+        let drop2 = this.node.getChildByName('drop2');
+        drop1.active=false;
+        drop2.active=false;
         aaa.active=false;
         bbb.active=false;
     },
@@ -171,7 +175,7 @@ cc.Class({
                 // this.state+=Math.pow(this.node.rotation/10,2)/1000;
             }
             // if (gm) {
-                this.state =this.state+gm.windManager.windPower * 0.1 * dt+this.BirdWeight *0.5* dt;
+                this.state =this.state+gm.windManager.windPower * 0.26 * dt+this.BirdWeight *0.5* dt;
 
             // }
 
@@ -183,8 +187,20 @@ cc.Class({
                 // let rotateTo = cc.rotateTo(dt, angle);
                 // this.Character.runAction(rotateTo);
                 this.Character.rotation = angle;
+                let drop1 = this.node.getChildByName('drop1');
+                let drop2 = this.node.getChildByName('drop2');
                 this.preState = this.state;
-            }
+                if(Math.abs(angle)<30)
+                {drop1.active=false;
+                    drop2.active=false;
+
+                }
+             else if(Math.abs(angle)<60)
+                {
+                    // console.log(angle);
+                    drop1.active=true;
+                drop2.active=true;}
+                        }
             if (this.state > 5 || this.state < -5) {
                 // window.Global
                 gm.gameOver = true;
@@ -199,6 +215,7 @@ cc.Class({
     /*触发事件*/
     onBombEvent(event) {
         //window.GM.ropeMove.moveSpeed=-30;
+        let score = cc.find("Canvas/Background/score/number")
         console.log("OnBombEvent");
         // window.GM.ropeMove.moveSpeed = -20;//倒退的速度
         // this.scheduleOnce(function () {
@@ -206,6 +223,14 @@ cc.Class({
         //     window.GM.ropeMove.moveSpeed = 20;
         // }, 3);
         window.GM.distance-=6;
+        var oldColor= score.color;
+        var oldScale= score.scale;
+        score.setScale(1.5);
+       score.color=new cc.color(105,105,105,255);
+        setTimeout(() => {
+               score.color=oldColor;
+               score.setScale(1);
+           }, 2000);
     },
 
     onBicycleEvent(event) {
@@ -268,19 +293,29 @@ cc.Class({
         cc.log('changechar')
         let aaa = this.node.getChildByName("Character")
         let bbb = this.node.getChildByName("charaWithBike")
+        let score = cc.find("Canvas/Background/score/number")
+        let acc = cc.find("Canvas/Background/score/acc")
+        var oldColor= score.color;
+        score.color=new cc.color(220,20,60,255);
 
         // let anim = bbb.getComponent(cc.Animation);
         aaa.active = false
         bbb.active = true
+        acc.active = true
         this.StickObject.y += 30
         this.radioObject.active = true
+               
+        score.setScale(1.5);
         // anim.play()
         setTimeout(() => {
+            acc.active = false
             bbb.active = false
             this.radioObject.active = false
             aaa.active = true
             this.StickObject.y -= 30
             this.bikeState = false
+            score.color=oldColor;
+            score.setScale(1);
         }, 5000);
 
     }
